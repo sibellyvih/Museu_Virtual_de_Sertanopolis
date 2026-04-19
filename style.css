@@ -1,0 +1,43 @@
+h2 {
+    font-size: 22px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 100px;
+}
+
+.topicos{
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.topicos h1{
+    font-size: 25px;
+    text-align: center;
+}
+
+.topicos li {
+    padding: 10px;
+}
+
+.topicos button {
+    background-color: rgb(197, 119, 119);
+    text-align: center;
+}
+
+footer {
+   background-color: rgb(189, 188, 188); 
+   color: rgb(0, 0, 0);
+}
+
+footer h1 {
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+footer p {
+    padding: 60px;
+    text-align: justify;
+    text-indent: 20px;
+}
