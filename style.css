@@ -5,6 +5,10 @@ h2 {
     padding: 100px;
 }
 
+a {
+    color: black;
+}
+
 .topicos{
     padding: 30px;
     font-family: 'Times New Roman', Times, serif;

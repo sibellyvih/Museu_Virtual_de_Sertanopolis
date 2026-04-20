@@ -2,42 +2,47 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página inicial</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
 <body class="bg-white text-black">
 
   <!-- HEADER -->
-  <header id="header" class="fixed top-0 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 bg-white transition-all duration-300">
+  <header id="header" class="fixed top-0 left-0 w-full flex flex-col items-start pl-12 pr-6 py-6 bg-white z-50 transition-all duration-300 overflow-hidden">
     
     <h1 id="title" class="text-7xl font-bold leading-none origin-left">
-      <span class="text-blue-900">Museu Virtual de</span>
-      <span class="text-red-600"> <br>Sertanópolis</span>
+      <span class="text-blue-900 block">Museu Virtual de</span>
+      <span class="text-red-600 block">Sertanópolis</span>
     </h1>
 
-    <nav id="nav" class="opacity-0">
-      <ul class="flex gap-6 text-lg items-center">
+    <!-- AGORA COMEÇA VISÍVEL -->
+    <nav id="nav" class="mt-6 w-full">
+      <ul class="flex gap-10 text-lg items-center">
         <li><a href="index.html">Início</a></li>
         <li><a href="acervo3d.html">Acervo 3D</a></li>
-        <li><a href="#">História da cidade</a></li>
-        <li><a href="#">Curiosidades</a></li>
         <li><a href="#">Museu histórico</a></li>
+        <li><a href="#">Curiosidades</a></li>
       </ul>
     </nav>
 
   </header>
 
-  <img src="bandeiraIA.png" alt="Imagem com a bandeira de Sertanópolis ao fundo com peças reprentando o acervo do museu." class="mt-40 w-full">
+  <!-- IMAGEM -->
+  <img src="bandeiraIA.png" class="mt-40 w-full relative z-0">
 
-  <!-- Espaço extra para permitir scroll -->
-   <h2>Mesmo com o museu fechado, sua história continua viva.</h2>
+  <!-- CONTEÚDO -->
+  <main class="p-6 space-y-16">
+    <h2 class="text-2xl">Mesmo com o museu fechado, sua história continua viva.</h2>
 
-  <!-- SCRIPT ANIMAÇÃO CONTÍNUA -->
+    <section class="h-screen bg-gray-100"></section>
+    <section class="h-screen bg-gray-200"></section>
+  </main>
+
+  <!-- SCRIPT -->
   <script>
     const title = document.getElementById('title');
     const nav = document.getElementById('nav');
@@ -46,14 +51,11 @@
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
 
-      // limite da animação
       const maxScroll = 300;
-
-      // progresso de 0 a 1
       let progress = scrollY / maxScroll;
       if (progress > 1) progress = 1;
 
-      // 🔹 animação do título
+      // 🔹 TÍTULO
       const scale = 1 - (progress * 0.7);
       const translateX = progress * -100;
       const translateY = progress * -20;
@@ -63,16 +65,25 @@
         translate(${translateX}px, ${translateY}px)
       `;
 
-      // 🔹 animação do menu
-      nav.style.opacity = progress;
-      nav.style.transform = `translateY(${20 - progress * 20}px)`;
+      // 🔹 NAV (AGORA SEM OPACITY, SÓ MOVIMENTO)
+      nav.style.transform = `translateY(${20 - progress * 40}px)`;
 
-      // 🔹 adicionar linha preta ao rolar
-      if (scrollY > 10) {
-        header.classList.add('border-b', 'border-black');
-      } else {
-        header.classList.remove('border-b', 'border-black');
-      }
+      // 🔹 LINHA + SOMBRA
+      header.style.borderBottom = `1px solid rgba(0,0,0,${progress})`;
+      header.style.boxShadow = `0 2px 10px rgba(0,0,0,${progress * 0.1})`;
+
+      // 🔹 TROCA DE LAYOUT
+      if (scrollY > 80) {
+      header.classList.remove('flex-col', 'items-start', 'py-6');
+      header.classList.add('flex-row', 'items-center', 'justify-between', 'py-2');
+
+      nav.classList.remove('mt-6');
+    } else {
+      header.classList.remove('flex-row', 'items-center', 'justify-between', 'py-2');
+      header.classList.add('flex-col', 'items-start', 'py-6');
+
+      nav.classList.add('mt-6');
+    }
     });
   </script>
 

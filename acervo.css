@@ -1,0 +1,12 @@
+.container{
+    display: block;
+    gap: 10px
+}
+
+.container h2 {
+    display: block;
+}
+
+.container p {
+    display: block;
+}

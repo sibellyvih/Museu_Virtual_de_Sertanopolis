@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Acervo 3D</title>
+  <link rel="stylesheet" href="acervo.css">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,71 +15,27 @@
 <body class="bg-white text-black">
 
   <!-- HEADER -->
-  <header id="header" class="fixed top-0 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 bg-white transition-all duration-300">
+  <header id="header" class="sticky top-0 z-50 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 bg-white shadow">
     
-    <h1 id="title" class="text-7xl font-bold leading-none origin-left">
+    <h1 id="title" class="text-4xl font-bold leading-none origin-left">
       Acervo 3D
     </h1>
 
-    <nav id="nav" class="opacity-0">
-      <ul class="flex gap-6 text-lg items-center">
+    <nav id="nav" >
+      <ul class="flex gap-10 text-lg items-center">
         <li><a href="index.html">Início</a></li>
         <li><a href="acervo3d.html">Acervo 3D</a></li>
-        <li><a href="#">História da cidade</a></li>
-        <li><a href="#">Curiosidades</a></li>
         <li><a href="#">Museu histórico</a></li>
+        <li><a href="#">Curiosidades</a></li>
       </ul>
     </nav>
 
   </header>
 
-  <img src="bandeiraIA.png" alt="Imagem com a bandeira de Sertanópolis ao fundo com peças reprentando o acervo do museu." class="mt-40 w-full">
+  <img src="ImagemMuseu.jpg" alt="Imagem com a bandeira de Sertanópolis ao fundo com peças reprentando o acervo do museu." class="mt-40 w-full">
 
-  <!-- CONTEÚDO -->
-  <main class="pt-40 p-6 space-y-32">
 
-  </main>
-
-  <!-- SCRIPT ANIMAÇÃO CONTÍNUA -->
-  <script>
-    const title = document.getElementById('title');
-    const nav = document.getElementById('nav');
-    const header = document.getElementById('header');
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-
-      // limite da animação
-      const maxScroll = 300;
-
-      // progresso de 0 a 1
-      let progress = scrollY / maxScroll;
-      if (progress > 1) progress = 1;
-
-      // 🔹 animação do título
-      const scale = 1 - (progress * 0.7);
-      const translateX = progress * -100;
-      const translateY = progress * -20;
-
-      title.style.transform = `
-        scale(${scale})
-        translate(${translateX}px, ${translateY}px)
-      `;
-
-      // 🔹 animação do menu
-      nav.style.opacity = progress;
-      nav.style.transform = `translateY(${20 - progress * 20}px)`;
-
-      // 🔹 linha preta ao rolar
-      if (scrollY > 10) {
-        header.classList.add('border-b', 'border-black');
-      } else {
-        header.classList.remove('border-b', 'border-black');
-      }
-    });
-  </script>
-
-<section>
+<section class="container">
       <h2 class="text-2xl mb-4">Computador</h2>
 
       <model-viewer 
@@ -91,7 +48,7 @@
       <p>Descrição: ...</p>
     </section>
 
-    <section>
+    <section class="container">
       <h2 class="text-2xl mb-4">Inalador</h2>
 
       <model-viewer 
