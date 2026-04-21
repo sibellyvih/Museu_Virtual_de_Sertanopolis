@@ -1,0 +1,26 @@
+{
+  "name": "museu_virtual",
+  "version": "1.0.0",
+  "description": "",
+  "main": "modelos.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sibellyvih/Museu_Virtual_de_Sertanopolis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sibellyvih/Museu_Virtual_de_Sertanopolis/issues"
+  },
+  "homepage": "https://github.com/sibellyvih/Museu_Virtual_de_Sertanopolis#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0"
+  }
+}

@@ -1,12 +1,38 @@
-.container{
-    display: block;
-    gap: 10px
+body {
+    background-color: rgb(28, 100, 163);
+    color: black;
 }
 
-.container h2 {
-    display: block;
+header {
+    color: black;
+    background-color: white;
 }
 
-.container p {
-    display: block;
+.capa {
+    padding: 300px;
+}
+
+select {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.listaModelos {
+    color: #000;
+    background-color: #000;
+}
+
+.modelos-3d {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.modelo {
+  background: #f9f9f9;
+  color: #000;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
 }

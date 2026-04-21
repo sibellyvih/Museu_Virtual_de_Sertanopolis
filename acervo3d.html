@@ -12,10 +12,10 @@
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
-<body class="bg-white text-black">
+<body>
 
   <!-- HEADER -->
-  <header id="header" class="sticky top-0 z-50 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 bg-white shadow">
+  <header id="header" class="sticky top-0 z-50 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 shadow">
     
     <h1 id="title" class="text-4xl font-bold leading-none origin-left">
       Acervo 3D
@@ -25,145 +25,34 @@
       <ul class="flex gap-10 text-lg items-center">
         <li><a href="index.html">Início</a></li>
         <li><a href="acervo3d.html">Acervo 3D</a></li>
-        <li><a href="#">Museu histórico</a></li>
-        <li><a href="#">Curiosidades</a></li>
+        <li><a href="museuHistorico.html">Museu histórico</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
       </ul>
     </nav>
 
   </header>
 
-  <img src="ImagemMuseu.jpg" alt="Imagem com a bandeira de Sertanópolis ao fundo com peças reprentando o acervo do museu." class="mt-40 w-full">
+  <!-- <img src="imagens/ImagemMuseu.jpg" alt="..." class="mt-40 w-full"> -->
+
+  <h2 class="capa">Conheça o acervo do museu de uma forma diferente</h2>
 
 
-<section class="container">
-      <h2 class="text-2xl mb-4">Computador</h2>
+   <!-- 🔽 FILTRO -->
+  <div class="pesquisa text-center mb-6">
+    <select id="filtroCategoria" class="p-2 border rounded">
+      <option value="">Todas as categorias</option>
+      <option value="indigena">Peças indígenas</option>
+      <option value="eletronico">Eletrônicos</option>
+    </select>
+  </div>
 
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
+  <!-- 🔽 GRID -->
+  <div id="listaModelos" 
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+  </div>
 
-    <section class="container">
-      <h2 class="text-2xl mb-4">Inalador</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-    <section>
-      <h2 class="text-2xl mb-4">Notenook</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-     <section>
-      <h2 class="text-2xl mb-4">Secador de cabelo</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-     <section>
-      <h2 class="text-2xl mb-4">Televisão 1</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-    
-     <section>
-      <h2 class="text-2xl mb-4">Televisão 2</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-     <section>
-      <h2 class="text-2xl mb-4">Peça indígena 1</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-    <section>
-      <h2 class="text-2xl mb-4">Peça indígena 2</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-    <section>
-      <h2 class="text-2xl mb-4">Peça indígena 3</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
-
-    <section>
-      <h2 class="text-2xl mb-4">Peça indígena 4</h2>
-
-      <model-viewer 
-        src="teste.glb"
-        alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        style="width: 500px; height: 500px;">
-      </model-viewer>
-      <p>Descrição: ...</p>
-    </section>
+  <!-- 🔥 IMPORTANTE: JS separado com defer -->
+  <script src="modelos.js" defer></script>
 
 </body>
 </html>
