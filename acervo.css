@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(28, 100, 163);
+    background-color: rgb(255, 255, 255);
     color: black;
 }
 
@@ -8,13 +8,30 @@ header {
     background-color: white;
 }
 
-.capa {
-    padding: 300px;
+.destaques {
+    background-color: rgb(28, 100, 163);
+    color: #ffffff;
+    padding: 50px;
+    justify-items: center;
 }
 
-select {
-    background-color: #ffffff;
-    padding: 10px;
+.destaques h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 18px;
+    text-align: center;
+    padding: 100px;
+}
+
+.carrosel-box {
+  position: relative;          /* relative */
+  width: 500px;                /* w-80 = 320px */
+  height: 500px;               /* h-80 = 320px */
+  background-color: rgb(255, 251, 251);     /* bg-black */
+  border-radius: 1rem;         /* rounded-2xl */
+  overflow: hidden;            /* overflow-hidden */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); /* shadow-2xl */
 }
 
 .listaModelos {
@@ -35,4 +52,41 @@ select {
   padding: 15px;
   border-radius: 10px;
   text-align: center;
+}
+
+.realidade-aumentada {
+    background-color: #9a0000;
+    color: #ffffff;
+    padding: 25px;
+    justify-items: center;
+}
+
+.realidade-aumentada h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 18px;
+    text-align: center;
+    padding: 10px
+}
+
+.categorias {
+    background-color: rgb(28, 100, 163);
+    padding: 25px;
+    color: #000;
+}
+
+.categorias h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 18px;
+    text-align: center;
+    color: #ffffff;
+}
+
+select {
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px;
 }
