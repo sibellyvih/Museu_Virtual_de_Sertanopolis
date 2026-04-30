@@ -1,3 +1,23 @@
+.bungee-regular, h1 {
+  font-family: "Bungee", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px;
+}
+
+a {
+    color: rgb(8, 8, 106)
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
 img {
     justify-self: center;
 }
