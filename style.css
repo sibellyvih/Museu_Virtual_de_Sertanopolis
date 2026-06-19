@@ -1,13 +1,21 @@
-.bungee-regular, h1, a {
-  font-family: "Bungee", sans-serif;
-  font-weight: 800;
-  font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, a, p {
+    font-family: 'Cinzel', serif;
 }
 
 h2 {
     font-size: 22px;
     text-align: center;
     padding: 100px;
+}
+
+.inicio {
+    padding: 200px;
 }
 
 a {
@@ -19,12 +27,12 @@ a:hover {
     text-decoration: underline;
 }
 
-.topicos{
+.topicos {
     padding: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.topicos h1{
+.topicos h1 {
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bolder;
@@ -42,15 +50,17 @@ a:hover {
     padding: 18px;
 }
 
- hr {
-  height: 1px; /* Define a espessura */
-  background-color: #000000; /* Cor da linha */
+hr {
+    height: 1px;
+    /* Define a espessura */
+    background-color: #000000;
+    /* Cor da linha */
 }
 
 
 footer {
-   background-color: rgb(255, 255, 255); 
-   color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 footer h1 {
