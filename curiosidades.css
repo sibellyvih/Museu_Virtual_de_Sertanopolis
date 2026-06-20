@@ -1,8 +1,16 @@
-.bungee-regular,
-h1 {
-    font-family: "Bungee", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+p, figcaption {
+    font-family: 'Cinzel', serif;
 }
 
 h2 {

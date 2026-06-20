@@ -27,6 +27,15 @@ a:hover {
     text-decoration: underline;
 }
 
+p {
+    padding: 10px;
+}
+
+#paginas {
+    margin: 30px;
+    padding: 30px;
+}
+
 .topicos {
     padding: 30px;
     font-family: 'Times New Roman', Times, serif;
@@ -67,7 +76,6 @@ footer h1 {
     padding: 30px;
     text-align: center;
     font-size: 25px;
-    font-family: 'Times New Roman', Times, serif
 }
 
 footer p {
