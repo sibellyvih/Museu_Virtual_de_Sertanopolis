@@ -15,6 +15,8 @@ h2 {
 }
 
 .inicio {
+    background-color: rgb(5, 5, 60);
+    color: white;
     padding: 200px;
 }
 
@@ -36,19 +38,19 @@ p {
     padding: 30px;
 }
 
-.topicos {
+#paginas {
     padding: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.topicos h1 {
+#paginas h1 {
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bolder;
 }
 
-.topicos li {
-    padding: 20px;
+#paginas li {
+    padding: 50px;
 }
 
 .botao {
@@ -68,8 +70,8 @@ hr {
 
 
 footer {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #9a0000;
+    color: white
 }
 
 footer h1 {
