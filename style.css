@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
-
-body {
-    font-family: 'Lato', sans-serif;
+@font-face {
+    font-family: "LOT";
+    src: url("fonts/LOT.otf") format("truetype");
 }
 
-h1, h2, h3, h4, a, p {
+h1{
+    /* font-family: 'LOT', sans-serif;
+    font-weight: lighter;
+    font-style: normal; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+figcaption {
     font-family: 'Cinzel', serif;
 }
 
