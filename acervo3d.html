@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Acervo 3D</title>
@@ -10,12 +11,12 @@
 
 <body>
   <header id="header" class="sticky top-0 z-50 left-0 w-full flex items-center justify-between pl-12 pr-6 py-6 shadow">
-    
+
     <h1 id="title" class="text-4xl font-bold leading-none origin-left">
       Acervo 3D
     </h1>
 
-    <nav id="nav" >
+    <nav id="nav">
       <ul class="bungee-regular flex gap-10 text-lg items-center">
         <li><a href="index.html">Início</a></li>
         <li><a href="acervo3d.html">Acervo 3D</a></li>
@@ -31,145 +32,127 @@
 
     <h2>Destaques</h2>
 
-      <div class="carrosel-box">
-          <div class="absolute top-0 left-0 w-full flex gap-1 p-2 z-10">
-            <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
-            <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
-            <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
-          </div>
-
-          <!-- Slides -->
-          <div id="slides" class="w-full h-full flex transition-transfom duration-500">
-
-            <div class="slide w-full h-full flex-shrink-0 relative">
-              <model-viewer
-                src="modelos3d/peça inteira original/lustre.glb"
-                alt="Modelo 3D 1"
-                camera-controls
-                auto-rotate
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                style="width: 100%; height: 100%;">
-              </model-viewer>
-
-              <div class="absolute bottom-0 text-black p-3 w-full">
-                <h2 class="font-bold ">Modelo 1</h2>
-                <p>Peça indígena</p>
-              </div>
-            </div>
-
-            <div class="slide w-full h-full flex-shrink-0 relative">
-              <model-viewer
-                src="modelos3d/mouse.glb"
-                alt="Modelo 3D 2"
-                camera-controls
-                auto-rotate
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                style="width: 100%; height: 100%;">
-              </model-viewer>
-
-              <div class="absolute bottom-0 text-black p-3 w-full">
-                <h2 class="font-bold">Modelo 2</h2>
-                <p>Outra descrição do modelo</p>
-              </div>
-            </div>
-
-            <div class="slide w-full h-full flex-shrink-0 relative">
-              <model-viewer
-                src="modelos3d/mouse.glb"
-                alt="Modelo 3D 3"
-                camera-controls
-                auto-rotate
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                style="width: 100%; height: 100%;">
-              </model-viewer>
-
-              <div class="absolute bottom-0 text-black p-3 w-full">
-                <h2 class="font-bold">Modelo 3</h2>
-                <p>Mais detalhes do modelo</p>
-              </div>
-            </div>
-
-          </div>
+    <div class="carrosel-box">
+      <div class="absolute top-0 left-0 w-full flex gap-1 p-2 z-10">
+        <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
+        <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
+        <div class="progress h-1 bg-white/30 flex-1 rounded"></div>
       </div>
 
-      <script>
-        
-const slides = document.getElementById("slides");
-const progressBars = document.querySelectorAll(".progress");
-let index = 0;
-let interval;
+      <!-- Slides -->
+      <div id="slides" class="w-full h-full flex transition-transfom duration-500">
 
-function startProgress() {
-  progressBars.forEach((bar, i) => {
-    bar.style.background = i < index ? "white" : "rgba(255,255,255,0.3)";
-    bar.style.width = "100%";
-  });
+        <div class="slide w-full h-full flex-shrink-0 relative">
+          <model-viewer src="modelos3d/peça inteira original/lustre.glb" alt="Modelo 3D 1" camera-controls auto-rotate
+            ar ar-modes="webxr scene-viewer quick-look" style="width: 100%; height: 100%;">
+          </model-viewer>
 
-  let progress = 0;
-  const currentBar = progressBars[index];
-  currentBar.style.width = "0%";
-  currentBar.style.background = "white";
+          <div class="absolute bottom-0 text-black p-3 w-full">
+            <h2 class="font-bold ">Modelo 1</h2>
+            <p>Peça indígena</p>
+          </div>
+        </div>
 
-  clearInterval(interval);
-  interval = setInterval(() => {
-    progress += 1;
-    currentBar.style.width = progress + "%";
+        <div class="slide w-full h-full flex-shrink-0 relative">
+          <model-viewer src="modelos3d/mouse.glb" alt="Modelo 3D 2" camera-controls auto-rotate ar
+            ar-modes="webxr scene-viewer quick-look" style="width: 100%; height: 100%;">
+          </model-viewer>
 
-    if (progress >= 100) {
-      nextSlide();
-    }
-  }, 40);
-}
+          <div class="absolute bottom-0 text-black p-3 w-full">
+            <h2 class="font-bold">Modelo 2</h2>
+            <p>Outra descrição do modelo</p>
+          </div>
+        </div>
 
-function showSlide() {
-  slides.style.transform = `translateX(-${index * 100}%)`;
-  startProgress();
-}
+        <div class="slide w-full h-full flex-shrink-0 relative">
+          <model-viewer src="modelos3d/mouse.glb" alt="Modelo 3D 3" camera-controls auto-rotate ar
+            ar-modes="webxr scene-viewer quick-look" style="width: 100%; height: 100%;">
+          </model-viewer>
 
-function nextSlide() {
-  index = (index + 1) % progressBars.length;
-  showSlide();
-}
+          <div class="absolute bottom-0 text-black p-3 w-full">
+            <h2 class="font-bold">Modelo 3</h2>
+            <p>Mais detalhes do modelo</p>
+          </div>
+        </div>
 
-function prevSlide() {
-  index = (index - 1 + progressBars.length) % progressBars.length;
-  showSlide();
-}
+      </div>
+    </div>
 
-// Clique estilo story
-const container = document.querySelector(".relative");
-container.addEventListener("click", (e) => {
-  const x = e.clientX;
-  const width = container.clientWidth;
+    <script>
 
-  if (x < width / 2) {
-    prevSlide();
-  } else {
-    nextSlide();
-  }
-});
+      const slides = document.getElementById("slides");
+      const progressBars = document.querySelectorAll(".progress");
+      let index = 0;
+      let interval;
 
-// Swipe (arrastar)
-let startX = 0;
-container.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
+      function startProgress() {
+        progressBars.forEach((bar, i) => {
+          bar.style.background = i < index ? "white" : "rgba(255,255,255,0.3)";
+          bar.style.width = "100%";
+        });
 
-container.addEventListener("touchend", (e) => {
-  let endX = e.changedTouches[0].clientX;
+        let progress = 0;
+        const currentBar = progressBars[index];
+        currentBar.style.width = "0%";
+        currentBar.style.background = "white";
 
-  if (startX - endX > 50) {
-    nextSlide();
-  } else if (endX - startX > 50) {
-    prevSlide();
-  }
-});
+        clearInterval(interval);
+        interval = setInterval(() => {
+          progress += 1;
+          currentBar.style.width = progress + "%";
 
-showSlide();
-      </script>
+          if (progress >= 100) {
+            nextSlide();
+          }
+        }, 40);
+      }
+
+      function showSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        startProgress();
+      }
+
+      function nextSlide() {
+        index = (index + 1) % progressBars.length;
+        showSlide();
+      }
+
+      function prevSlide() {
+        index = (index - 1 + progressBars.length) % progressBars.length;
+        showSlide();
+      }
+
+      // Clique estilo story
+      const container = document.querySelector(".relative");
+      container.addEventListener("click", (e) => {
+        const x = e.clientX;
+        const width = container.clientWidth;
+
+        if (x < width / 2) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+      });
+
+      // Swipe (arrastar)
+      let startX = 0;
+      container.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      container.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+          nextSlide();
+        } else if (endX - startX > 50) {
+          prevSlide();
+        }
+      });
+
+      showSlide();
+    </script>
 
   </div>
 
@@ -177,50 +160,76 @@ showSlide();
     <h2>Conheça a exposição do museu em realidade aumentada</h2>
 
     <section class="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-lg mt-10">
-  <h2 class="text-2xl font-bold mb-4 text-center text-black">Como visualizar em Realidade Aumentada</h2>
+      <h2 class="text-2xl font-bold mb-4 text-center text-black">Como visualizar em Realidade Aumentada</h2>
 
-  <ol class="space-y-3 text-gray-700">
+      <ol class="space-y-3 text-gray-700">
 
 
-    <li><strong>1. Clique em “Ver em AR”:</strong><br>
-      Toque no botão de realidade aumentada abaixo do modelo.
-    </li>
+        <li><strong>1. Clique em “Ver em AR”:</strong><br>
+          Toque no botão de realidade aumentada abaixo do modelo.
+        </li>
 
-    <li><strong>2. Permita o acesso à câmera:</strong><br>
-      Autorize o uso da câmera quando solicitado.
-    </li>
+        <li><strong>2. Permita o acesso à câmera:</strong><br>
+          Autorize o uso da câmera quando solicitado.
+        </li>
 
-    <li><strong>3. Aponte para uma superfície:</strong><br>
-      Direcione a câmera para o chão ou uma mesa até reconhecer o ambiente.
-    </li>
+        <li><strong>3. Aponte para uma superfície:</strong><br>
+          Direcione a câmera para o chão ou uma mesa até reconhecer o ambiente.
+        </li>
 
-    <li><strong>4. Posicione o objeto:</strong><br>
-      Toque na tela para inserir o modelo no espaço real.
-    </li>
+        <li><strong>4. Posicione o objeto:</strong><br>
+          Toque na tela para inserir o modelo no espaço real.
+        </li>
 
-    <li><strong>5. Interaja com o modelo:</strong><br>
-      Gire, aproxime e caminhe ao redor para explorar o objeto.
-    </li>
+        <li><strong>5. Interaja com o modelo:</strong><br>
+          Gire, aproxime e caminhe ao redor para explorar o objeto.
+        </li>
 
-  </ol>
+      </ol>
 
-  <p class="mt-6 text-center text-green-600 font-semibold">
-    Explore o museu no mundo real!
-  </p>
-</section>
+      <p class="mt-6 text-center text-green-600 font-semibold">
+        Explore o museu no mundo real!
+      </p>
+    </section>
 
-    <model-viewer 
-      src="modelos3d/peça inteira original/lustre.glb"
-      alt="Modelo 3D"
-      
-      camera-controls
-      auto-rotate
-      
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      
-      style="width: 300px; height: 300px;">
+    <canvas id="application-canvas"></canvas>
+
+    <model-viewer src="modelos3d/peça inteira original/lustre.glb" alt="Modelo 3D" camera-controls auto-rotate ar
+      ar-modes="webxr scene-viewer quick-look" style="width: 300px; height: 300px;">
     </model-viewer>
+  </div>
+
+  <h2>Explore o acervo</h2>
+  <h3>Acervo reconstruído tridimensinalmente utilizando Gaussian Splatting</h3>
+  <div class="acervo-gaussian">
+    
+    <div class="box-modelo">
+      <figure>
+        <h3>Aparelho de inalação</h3>
+        <img class="imagem-acervo" src="imagens/gaussian_splatting/imagem-inalador.jpg"
+          alt="Imagem de um inalador de 1950">
+          <figcaption>Ano: 1950</figcaption>
+      </figure>
+      <a href="modelos_gaussian/inalador.html">Modelo 3D</a>
+    </div>
+    <div class="box-modelo">
+      <figure>
+        <h3>Cofre com formato de sapato</h3>
+        <img class="imagem-acervo" src="imagens/gaussian_splatting/imagem-inalador.jpg"
+          alt="Imagem de um inalador de 1950">
+          <figcaption>Ano: 1932</figcaption>
+      </figure>
+      <a href="modelos_gaussian/inalador.html">Modelo 3D</a>
+    </div>
+    <div class="box-modelo">
+      <figure>
+        <h3>Machado (Lâmina)</h3>
+        <img class="imagem-acervo" src="imagens/gaussian_splatting/imagem-inalador.jpg"
+          alt="Imagem de um inalador de 1950">
+          <figcaption>Incorporado: 2000</figcaption>
+      </figure>
+      <a href="modelos_gaussian/inalador.html">Modelo 3D</a>
+    </div>
   </div>
 
 
@@ -231,24 +240,24 @@ showSlide();
 
     <h1>Filtre as peças 3D por categoria</h2>
 
-   <!-- 🔽 FILTRO -->
-  <div class="pesquisa text-center mb-6">
-    <select id="filtroCategoria" class="p-2 border rounded">
-      <option value="">Todas as categorias</option>
-      <option value="indigena">Peças indígenas</option>
-      <option value="eletronico">Eletrônicos</option>
-    </select>
-  </div>
+      <!-- 🔽 FILTRO -->
+      <div class="pesquisa text-center mb-6">
+        <select id="filtroCategoria" class="p-2 border rounded">
+          <option value="">Todas as categorias</option>
+          <option value="indigena">Peças indígenas</option>
+          <option value="eletronico">Eletrônicos</option>
+        </select>
+      </div>
 
-  <!-- 🔽 GRID -->
-  <div id="listaModelos" 
-       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-  </div>
+      <!-- 🔽 GRID -->
+      <div id="listaModelos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      </div>
 
-  <!-- 🔥 IMPORTANTE: JS separado com defer -->
-  <script src="modelos.js" defer></script>
+      <!-- 🔥 IMPORTANTE: JS separado com defer -->
+      <script src="modelos.js" defer></script>
 
   </div>
 
 </body>
+
 </html>
